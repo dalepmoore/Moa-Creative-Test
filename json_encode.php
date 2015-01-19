@@ -146,7 +146,9 @@ function parse_html($element){
 					}
 				}
 				else{
-					$id=$subelement->getAttribute('id');
+					if($subelement->nodeType==XML_ELEMENT_NODE){
+						$id=$subelement->getAttribute('id');
+					}
 					if($id!=""){
 						$namesuffix="#".$id;
 					}
